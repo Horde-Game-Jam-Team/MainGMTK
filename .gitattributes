@@ -1,0 +1,7 @@
+# Treat Unreal assets and maps as binary files
+*.uasset binary -text -diff
+*.umap binary -text -diff
+
+# Prevent merging on assets
+*.uasset merge=binary
+*.umap merge=binary

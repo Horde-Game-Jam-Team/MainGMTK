@@ -1,0 +1,34 @@
+# Build artifacts
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+ExternalAssets/
+Content/Developers/
+Content/Collections/
+Content/Tests/
+Content/__ExternalActors__/
+
+# Unreal Launcher and plugins
+.vscode/
+.vs/
+.git/
+*.xcodeproj
+*.xcworkspace
+*.idea/
+
+# Ignore generated project files if you generate them manually
+*.sln
+*.vsconfig
+*.xcodeproj
+*.xcworkspace
+
+# Ignore plugin intermediates
+Plugins/**/Intermediate/
+Plugins/**/Binaries/
+Plugins/**/Build/
+
+# Ignore config backups
+Config/*.ini.tmp
+Config/*Editor.ini
