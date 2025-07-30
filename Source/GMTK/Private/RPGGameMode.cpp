@@ -3,3 +3,7 @@
 
 #include "RPGGameMode.h"
 
+ARPGGameMode::ARPGGameMode()
+{
+	//stub
+}

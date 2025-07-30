@@ -13,5 +13,7 @@ UCLASS()
 class GMTK_API ARPGGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	public:
+	ARPGGameMode();
 };

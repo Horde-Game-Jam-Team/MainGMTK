@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Epic Games, Inc. All Rights Reserved.
 
 #pragma once
 
@@ -7,11 +7,16 @@
 #include "RPGCameraManager.generated.h"
 
 /**
- * 
+ *  Basic First Person camera manager.
+ *  Limits min/max look pitch.
  */
 UCLASS()
-class GMTK_API ARPGCameraManager : public APlayerCameraManager
+class ARPGCameraManager : public APlayerCameraManager
 {
 	GENERATED_BODY()
 	
+public:
+
+	/** Constructor */
+	ARPGCameraManager();
 };
