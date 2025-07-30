@@ -27,9 +27,6 @@ public class GMTK : ModuleRules
 
 		PublicIncludePaths.AddRange(new string[] {
 			"GMTK",
-			"GMTK/Variant_Horror",
-			"GMTK/Variant_Shooter",
-			"GMTK/Variant_Shooter/AI"
 		});
 
 		// Uncomment if you are using Slate UI
