@@ -7,48 +7,21 @@
 		{
 			"Name": "GMTK",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"AIModule",
+				"UMG"
+			]
 		}
 	],
 	"Plugins": [
 		{
-			"Name": "AlembicImporter",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidDeviceProfileSelector",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "OnlineSubsystemGooglePlay",
-			"Enabled": false,
-			"SupportedTargetPlatforms": [
-				"Android"
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
 			]
-		},
-		{
-			"Name": "AndroidPermission",
-			"Enabled": false
-		},
-		{
-			"Name": "AndroidFileServer",
-			"Enabled": false
-		},
-		{
-			"Name": "ArchVisCharacter",
-			"Enabled": false
-		},
-		{
-			"Name": "GooglePAD",
-			"Enabled": false
 		},
 		{
 			"Name": "MetaHumanSDK",
@@ -59,27 +32,16 @@
 			"Enabled": false
 		},
 		{
-			"Name": "SubversionSourceControl",
-			"Enabled": false
+			"Name": "StateTree",
+			"Enabled": true
 		},
 		{
-			"Name": "MobileLauncherProfileWizard",
-			"Enabled": false
-		},
-		{
-			"Name": "WindowsMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "WmfMedia",
-			"Enabled": false
+			"Name": "GameplayStateTree",
+			"Enabled": true
 		},
 		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
 		}
-	],
-	"TargetPlatforms": [
-		"Windows"
 	]
 }
