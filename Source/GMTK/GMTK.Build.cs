@@ -17,16 +17,16 @@ public class GMTK : ModuleRules
 			"AIModule",
 			"StateTreeModule",
 			"GameplayStateTreeModule",
-			"UMG",
-			"GameplayAbilities",
-			"GameplayTags",
-			"GameplayTasks" 
+			"UMG"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 
 		PublicIncludePaths.AddRange(new string[] {
-			"GMTK"
+			"GMTK",
+			"GMTK/Variant_Horror",
+			"GMTK/Variant_Shooter",
+			"GMTK/Variant_Shooter/AI"
 		});
 
 		// Uncomment if you are using Slate UI
