@@ -9,6 +9,10 @@ Content/Developers/
 Content/Collections/
 Content/Tests/
 Content/__ExternalActors__/
+ProgramasRiderConfiguration/
+ProgramasRiderConfigurationplugins/
+ProgramasRiderSystem/
+ProgramasRiderSystemlog/
 
 # Unreal Launcher and plugins
 .vscode/
