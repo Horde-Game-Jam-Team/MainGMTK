@@ -9,7 +9,15 @@ UItemDropComponent::UItemDropComponent()
 void UItemDropComponent::SpawnItem()
 {
 	if (Items.Num() == 0)
+	{
+		if (GEngine)
+		{
+			FString Message = FString::Printf(TEXT("%s has no items"), *GetOwner()->GetName());
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, Message);
+		}
+
 		return;
+	}
 
 	int32 Index = FMath::RandRange(0, Items.Num() - 1);
 	TSubclassOf<AItem> ItemClass = Items[Index];

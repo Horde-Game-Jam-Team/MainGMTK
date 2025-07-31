@@ -26,6 +26,6 @@ void AItem::CollectItem_Implementation()
 	if (GEngine)
 	{
 		FString Message = FString::Printf(TEXT("Item collected"));
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Message);
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Cyan, Message);
 	}
 }
