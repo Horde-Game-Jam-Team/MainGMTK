@@ -13,6 +13,7 @@
 class UInputComponent;
 class USkeletalMeshComponent;
 class UCameraComponent;
+class UStatusComponent;
 class UInputAction;
 struct FInputActionValue;
 
@@ -33,6 +34,9 @@ class ARPGCharacter : public ACharacter, public IAbilitySystemInterface
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FirstPersonCameraComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	UStatusComponent* StatusComponent;
 
 protected:
 

@@ -1,0 +1,31 @@
+#include "Item.h"
+#include "Components/SphereComponent.h"
+#include "Components/StaticMeshComponent.h"
+
+AItem::AItem()
+{
+	PrimaryActorTick.bCanEverTick = true;
+	CollisionComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
+	CollisionComponent->InitSphereRadius(60.f);
+	RootComponent = CollisionComponent;
+	CollisionComponent->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+
+	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
+	MeshComponent->SetupAttachment(RootComponent);
+
+	CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnOverlapBegin);
+}
+
+void AItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	CollectItem_Implementation();
+}
+
+void AItem::CollectItem_Implementation()
+{
+	if (GEngine)
+	{
+		FString Message = FString::Printf(TEXT("Item collected"));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, Message);
+	}
+}
