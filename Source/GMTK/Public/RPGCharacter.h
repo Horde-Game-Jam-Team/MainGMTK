@@ -87,7 +87,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
+	UPROPERTY(BlueprintReadWrite)
+	float UpperBodyPitch{0};
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Clavicle Control")
+	float MinPitch = -60.f; // Looking down
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Clavicle Control")
+	float MaxPitch = 60.f;  // Looking up
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield System")
+	bool IsBlocking = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield System")
+	bool ShieldPickedUp = false;
 
 protected:
 

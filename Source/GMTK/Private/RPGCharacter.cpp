@@ -114,6 +114,21 @@ void ARPGCharacter::DoAim(float Yaw, float Pitch)
 		// pass the rotation inputs
 		AddControllerYawInput(Yaw);
 		AddControllerPitchInput(Pitch);
+		float ClampedAngle = FMath::ClampAngle(Pitch + UpperBodyPitch, MinPitch, MaxPitch);
+		
+		UpperBodyPitch = ClampedAngle;
+		/*GEngine->AddOnScreenDebugMessage(
+			-1,                          // Key (-1 means add a new message)
+			5.f,                         // Duration (in seconds)
+			FColor::Green,              // Text color
+			FString::Printf(TEXT("Pitch: %.2f"), Pitch)     // Message
+		);
+		GEngine->AddOnScreenDebugMessage(
+			-1,                          // Key (-1 means add a new message)
+			5.f,                         // Duration (in seconds)
+			FColor::Green,              // Text color
+			FString::Printf(TEXT("UpperBodyPitc: %.2f"), UpperBodyPitch)    // Message
+		);*/
 	}
 }
 
