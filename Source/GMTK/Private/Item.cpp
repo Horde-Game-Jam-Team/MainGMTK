@@ -1,6 +1,7 @@
 #include "Item.h"
 #include "Components/SphereComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "RPGCharacter.h"
 
 AItem::AItem()
 {
@@ -18,7 +19,11 @@ AItem::AItem()
 
 void AItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	CollectItem_Implementation();
+	if (Cast<ARPGCharacter>(OtherActor))
+	{
+		CollectItem_Implementation();
+		Destroy(); // Can be placed elsewhere, in case you don't want a specific item to be destroyed.
+	}
 }
 
 void AItem::CollectItem_Implementation()
