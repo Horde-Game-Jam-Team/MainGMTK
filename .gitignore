@@ -4,9 +4,15 @@ Build/
 DerivedDataCache/
 Intermediate/
 Saved/
+ExternalAssets/
 Content/Developers/
 Content/Collections/
 Content/Tests/
+Content/__ExternalActors__/
+ProgramasRiderSystemlog/
+ProgramasRiderSystem/
+ProgramasRiderConfigurationplugins/
+ProgramasRiderConfiguration/
 
 # Unreal Launcher and plugins
 .vscode/

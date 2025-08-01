@@ -7,6 +7,7 @@
 #include "Logging/LogMacros.h"
 #include "AbilitySystemInterface.h"
 #include "AbilitySystemComponent.h"
+#include "GenericTeamAgentInterface.h"
 #include "RPGAttributeSet.h"
 #include "RPGCharacter.generated.h"
 
@@ -18,11 +19,14 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplatedCharacter, Log, All);
 
+// Dispatcher for when don't fall behind occur
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFallBehindPunish);
+
 /**
  *  A basic first person character
  */
 UCLASS(abstract)
-class ARPGCharacter : public ACharacter, public IAbilitySystemInterface
+class ARPGCharacter : public ACharacter, public IAbilitySystemInterface, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
 
@@ -97,6 +101,10 @@ public:
 	bool IsBlocking = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Shield System")
 	bool ShieldPickedUp = false;
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Events")
+	FOnFallBehindPunish OnFallBehindPunish;
+
+
 
 protected:
 
@@ -121,6 +129,11 @@ protected:
 	/** Handles jump end inputs from either controls or UI interfaces */
 	UFUNCTION(BlueprintCallable, Category="Input")
 	virtual void DoJumpEnd();
+
+	// Makes the player the enemy
+	FGenericTeamId TeamId;
+	virtual FGenericTeamId GetGenericTeamId() const override { return TeamId; }
+
 
 
 public:
