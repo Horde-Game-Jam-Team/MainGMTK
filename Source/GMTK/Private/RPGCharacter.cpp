@@ -9,7 +9,6 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
-#include "StatusComponent.h"
 #include "EnhancedInputComponent.h"
 #include "InputActionValue.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -53,9 +52,6 @@ ARPGCharacter::ARPGCharacter()
 	FirstPersonCameraComponent->bEnableFirstPersonScale = true;
 	FirstPersonCameraComponent->FirstPersonFieldOfView = 70.0f;
 	FirstPersonCameraComponent->FirstPersonScale = 0.6f;
-
-	StatusComponent = CreateDefaultSubobject<UStatusComponent>(TEXT("Status Component"));
-
 
 	// configure the character comps
 	GetMesh()->SetOwnerNoSee(true);

@@ -25,6 +25,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void TakeDamage(int32 Amount);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void KillOwner();
+
+	virtual void KillOwner_Implementation();
 };

@@ -29,8 +29,7 @@ void UStatusComponent::TakeDamage(int32 Amount)
 	}
 }
 
-void UStatusComponent::KillOwner()
+void UStatusComponent::KillOwner_Implementation()
 {
-	// Expand upon later
 	GetOwner()->Destroy();
 }
