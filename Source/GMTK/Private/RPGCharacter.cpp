@@ -66,6 +66,8 @@ ARPGCharacter::ARPGCharacter()
 	// Configure character movement
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
 	GetCharacterMovement()->AirControl = 0.5f;
+
+	TeamId = FGenericTeamId(1);
 }
 
 void ARPGCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
