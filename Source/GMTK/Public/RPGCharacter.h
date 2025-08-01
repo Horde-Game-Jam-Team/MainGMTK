@@ -20,6 +20,9 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplatedCharacter, Log, All);
 
+// Dispatcher for when don't fall behind occur
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFallBehindPunish);
+
 /**
  *  A basic first person character
  */
@@ -91,6 +94,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(BlueprintAssignable, BlueprintCallable, Category = "Events")
+	FOnFallBehindPunish OnFallBehindPunish;
 
 
 
