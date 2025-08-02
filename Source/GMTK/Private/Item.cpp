@@ -21,7 +21,7 @@ void AItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherAct
 {
 	if (Cast<ARPGCharacter>(OtherActor))
 	{
-		CollectItem_Implementation();
+		CollectItem();
 		Destroy(); // Can be placed elsewhere, in case you don't want a specific item to be destroyed.
 	}
 }
