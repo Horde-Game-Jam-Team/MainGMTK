@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "RPGAttributeSet.h"
 #include "Item.generated.h"
 
 class USphereComponent;
@@ -23,8 +24,8 @@ class GMTK_API AItem : public AActor
 public:
 	AItem();
 
-	//UPROPERTY(BlueprintCallable)
-	//URPGAttributeSet Ability;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<URPGAttributeSet> Ability;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Item")
 	void CollectItem();
