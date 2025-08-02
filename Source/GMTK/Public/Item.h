@@ -23,6 +23,9 @@ class GMTK_API AItem : public AActor
 public:
 	AItem();
 
+	//UPROPERTY(BlueprintCallable)
+	//URPGAttributeSet Ability;
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Item")
 	void CollectItem();
 
